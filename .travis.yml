@@ -22,7 +22,7 @@ after_success:
     - docker push hayrettinm/multi-worker
 
 deploy:
-    #     edge: true
+    edge: true
     provider: elasticbeanstalk
     region: eu-west-2
     app: multi-container
