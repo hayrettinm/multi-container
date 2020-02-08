@@ -22,14 +22,15 @@ after_success:
     - docker push hayrettinm/multi-worker
 
 deploy:
-    edge: true
+    #edge: true
     provider: elasticbeanstalk
-    region: eu-west-2
-    app: multi-container
-    env: MultiContainer-env
-    bucket_name: elasticbeanstalk-eu-west-2-182422531796
+    region: "eu-west-2"
+    app: "multi-container"
+    env: "MultiContainer-env"
+    bucket_name: "elasticbeanstalk-eu-west-2-182422531796"
     bucket_path: docker-multi
     on:
         branch: master
     access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    secret_access_key: 
+        secure: $AWS_SECRET_KEY
