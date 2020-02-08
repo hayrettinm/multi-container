@@ -9,14 +9,14 @@ script:
     - docker run -e CI=true pointslead/react-test npm test -- --coverage
 
 after_success:
-    - docker build -t pointslead/multi-client ./client
-    - docker build -t pointslead/multi-nginx ./nginx
-    - docker build -t pointslead/multi-server ./server
-    - docker build -t pointslead/multi-worker ./worker
+    - docker build -t hayrettinm/multi-client ./client
+    - docker build -t hayrettinm/multi-nginx ./nginx
+    - docker build -t hayrettinm/multi-server ./server
+    - docker build -t hayrettinm/multi-worker ./worker
     # Log in to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_ID" --password-stdin
     # Take those images and push them to docker hub
-    - docker push pointslead/multi-client
-    - docker push pointslead/multi-nginx
-    - docker push pointslead/multi-server
-    - docker push pointslead/multi-worker
+    - docker push hayrettinm/multi-client
+    - docker push hayrettinm/multi-nginx
+    - docker push hayrettinm/multi-server
+    - docker push hayrettinm/multi-worker
