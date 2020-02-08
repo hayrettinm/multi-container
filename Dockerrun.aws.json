@@ -1,6 +1,6 @@
 {
     "AWSEBDockerrunVersion": 2,
-    "containedDefinitions": [
+    "containerDefinitions": [
         {
             "name": "client",
             "image": "hayrettinm/multi-client",
